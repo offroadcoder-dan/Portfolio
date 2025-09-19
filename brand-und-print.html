@@ -3,34 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WERKBOLD — B2B-Commerce, Automation & Content</title>
-  <meta name="description" content="Werkbold realisiert B2B-Shops, Automation und Content für anspruchsvolle B2B-Teams.">
+  <title>WERKBOLD — Brand & Print</title>
+  <meta name="description" content="Markensysteme, die Wiedererkennung schaffen – von Logo bis Messe, konsistent über alle Touchpoints.">
   <meta name="theme-color" content="#0E1116">
   <link rel="stylesheet" href="styles.css">
+  <link rel="prefetch" href="index.html">
 </head>
 <body>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-  <!-- Header -->
   <header class="header">
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="Zur Startseite">
         <img class="brand-logo" src="assets/WERKBOLD-Logo.png" alt="WERKBOLD" loading="eager">
       </a>
-
       <nav class="nav-links" aria-label="Hauptnavigation">
-        <a href="#leistungen">Leistungen</a>
-        <a href="#cases">Case Studies</a>
-        <a href="#branchen">Branchen</a>
-        <a href="#ressourcen">Ressourcen</a>
-        <a href="#ueber">Über</a>
+        <a href="index.html#leistungen">Leistungen</a>
+        <a href="index.html#cases">Case Studies</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html#branchen">Branchen</a>
+        <a href="index.html#ressourcen">Ressourcen</a>
+        <a href="index.html#ueber">Über</a>
       </nav>
-
       <div class="nav-cta">
-        <a class="btn btn-primary" href="https://calendly.com/daniel-maier-black-beetle/30min" target="_blank" rel="noopener">Strategie-Call buchen</a>
+        <a class="btn btn-primary" href="index.html#kalender" target="_self" rel="noopener">Strategie‑Call buchen</a>
       </div>
-
-      <!-- Mobile -->
       <button type="button" class="burger" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -60,45 +57,61 @@
           </nav>
         </div>
         <div class="mobile-actions">
-          <a class="btn btn-primary" href="https://calendly.com/daniel-maier-black-beetle/30min" target="_blank" rel="noopener">Strategie-Call buchen</a>
+          <a class="btn btn-primary" href="index.html#kalender" rel="noopener">Strategie‑Call buchen</a>
         </div>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <!-- Hero -->
     <section class="hero section">
       <div class="container grid grid-2">
         <div>
-          <h1>B2B-Commerce, der verkauft – <span style="color:var(--accent)">und Prozesse verbindet.</span></h1>
-          <p style="margin-top:12px">Werkbold realisiert B2B-Shops & Automation mit Content, der Ihre Pipeline messbar stärkt.</p>
-          <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
-            <a class="btn btn-primary" href="https://calendly.com/daniel-maier-black-beetle/30min" target="_blank" rel="noopener">Kurz-Audit buchen</a>
-            <a class="btn btn-ghost" href="#cases">Case Studies ansehen</a>
+          <div class="badge"><span class="dot dot-brass"></span><span>Leistung</span></div>
+          <h1 style="margin-top:8px">Brand & Print</h1>
+          <p class="subtitle">Marken, die tragen: von Logo über Guidelines bis Messeauftritt. Konsistente Systeme, die Wiedererkennung schaffen und Vertrieb unterstützen.</p>
+          <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+            <a class="btn btn-primary" href="index.html#kalender">Kurz‑Audit buchen</a>
+            <a class="btn btn-ghost" href="index.html#cases">Case Studies ansehen</a>
           </div>
-          <ul style="margin-top:24px;display:grid;gap:8px;grid-template-columns:1fr">
-            <li>✅ +27% Lead-to-Order in 6 Monaten</li>
-            <li>✅ −38% manueller Aufwand</li>
-            <li>✅ Schneller Time-to-Value</li>
-            <li>✅ Integrationen in ERP/CRM</li>
-          </ul>
         </div>
-        <!-- Statt Formular direkt Calendly-Widget -->
-        <div class="card hero-card">
-          <h3 style="font-size:18px;font-weight:700">Kurz-Audit jetzt buchen</h3>
-          <p class="subtitle">15 Minuten, klare Empfehlungen – Termin direkt online auswählen.</p>
-          <div style="margin-top:16px;overflow:hidden">
-            <iframe src="https://calendly.com/daniel-maier-black-beetle/30min?hide_event_type_details=1&primary_color=2B59FF"
-                    style="width:100%;height:630px;border:0;" frameborder="0"></iframe>
+        <div class="card center" style="min-height:220px">
+          <div class="container center" style="height:100%">
+            <div style="width:100%;height:180px;border-radius:12px;border:1px solid var(--border);background:#121926;color:#7C8599;display:flex;align-items:center;justify-content:center">Style‑Tiles / Mockups</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Restliche Sections (Trust-Bar, Leistungen, Cases, Prozess, CTA, Footer) bleiben identisch -->
-    <!-- … kopiere hier einfach deine vorhandenen Blöcke rein … -->
+    <section class="section">
+      <div class="container grid grid-3">
+        <div class="card" style="padding:20px">
+          <h3>Markensystem</h3>
+          <p class="subtitle">Logo, Typo, Farben, Komponenten, Guidelines</p>
+        </div>
+        <div class="card" style="padding:20px">
+          <h3>Print & Messe</h3>
+          <p class="subtitle">Broschüren, Rollups, Messestände, Sales‑Material</p>
+        </div>
+        <div class="card" style="padding:20px">
+          <h3>Enablement</h3>
+          <p class="subtitle">Vorlagen, Tooling, Übergabe an Teams</p>
+        </div>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="container">
+        <div class="card" style="padding:24px;display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+          <div>
+            <div class="badge" style="color:var(--text-muted)">Nächster Schritt</div>
+            <h2 style="margin-top:8px">Kostenloses Kurz‑Audit sichern</h2>
+            <p class="subtitle">15 Minuten. Klare Empfehlungen. Kein Pitch‑Theater.</p>
+          </div>
+          <a class="btn btn-primary" href="index.html#kalender">Strategie‑Call buchen</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>

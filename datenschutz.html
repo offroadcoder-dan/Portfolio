@@ -10,7 +10,9 @@
 <body>
   <header class="header">
     <div class="container nav">
-      <div class="brand"><div class="brand-mark"></div><span>WERKBOLD</span></div>
+      <a class="brand" href="index.html" aria-label="Zur Startseite">
+        <img class="brand-logo" src="assets/WERKBOLD-Logo.png" alt="WERKBOLD" loading="eager">
+      </a>
       <a class="btn btn-ghost" href="index.html">Zurück</a>
     </div>
   </header>
@@ -92,6 +94,49 @@
       </p>
     </div>
   </main>
-  <footer class="container footer-bottom">© <script>document.write(new Date().getFullYear())</script> Werkbold</footer>
+  <footer>
+    <div class="container section grid footer-grid">
+      <div>
+        <a class="brand" href="index.html" aria-label="Zur Startseite">
+          <img class="brand-logo" src="assets/WERKBOLD-Logo.png" alt="WERKBOLD" loading="lazy">
+        </a>
+        <p class="subtitle" style="margin-top:12px">B2B‑Shops & Automation · Social Content · Brand & Print</p>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <div class="subtitle" style="margin-top:8px;display:grid;gap:8px">
+          <a href="b2b-shops-automation.html">B2B‑Shops & Automation</a>
+          <a href="social-media-content.html">Social Media Content</a>
+          <a href="brand-und-print.html">Brand & Print</a>
+        </div>
+      </div>
+      <div>
+        <h4>Unternehmen</h4>
+        <div class="subtitle" style="margin-top:8px;display:grid;gap:8px">
+          <a href="portfolio.html">Portfolio</a>
+          <a href="index.html#ueber">Über Werkbold</a>
+          <a href="index.html#cases">Case Studies</a>
+          <a href="#">Karriere</a>
+        </div>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <div class="subtitle" style="margin-top:8px;display:grid;gap:8px">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="#">Cookie‑Einstellungen</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">© <span id="year"></span> Werkbold</div>
+    <script>
+      (function(){
+        const yearEl = document.getElementById('year');
+        if(yearEl){
+          yearEl.textContent = new Date().getFullYear();
+        }
+      })();
+    </script>
+  </footer>
 </body>
 </html>

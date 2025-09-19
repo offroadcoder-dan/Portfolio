@@ -18,7 +18,14 @@ body{
   color:var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  overflow-x:auto;
 }
+body{scrollbar-color: var(--cta) rgba(255,255,255,.06); scrollbar-width: thin}
+*::-webkit-scrollbar{width:10px;height:10px}
+*::-webkit-scrollbar-track{background:rgba(255,255,255,.06);border-radius:8px}
+*::-webkit-scrollbar-thumb{background:rgba(43,89,255,.7);border-radius:8px;border:2px solid transparent;background-clip:content-box}
+*::-webkit-scrollbar-thumb:hover{background:rgba(43,89,255,.9)}
+body.nav-open{overflow:hidden}
 a{color:inherit}
 img{max-width:100%;display:block}
 .container{max-width:1120px;margin:0 auto;padding:0 24px}
@@ -27,6 +34,8 @@ img{max-width:100%;display:block}
 h1,h2,h3{line-height:1.2;margin:0}
 p{margin:0}
 .subtitle{color:var(--text-muted);margin-top:8px;max-width:720px}
+/* Ensure anchored sections are not hidden behind sticky header */
+section{scroll-margin-top:80px}
 
 /* ---------- Utilities ---------- */
 .card{
@@ -38,6 +47,9 @@ p{margin:0}
 .grid{display:grid;gap:24px}
 .grid-2{grid-template-columns:1fr}
 .grid-3{grid-template-columns:1fr}
+.grid-4{grid-template-columns:1fr}
+.grid-auto-pill{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.footer-grid{grid-template-columns:1fr}
 .center{display:flex;align-items:center;justify-content:center}
 .badge{display:inline-flex;gap:8px;align-items:center;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
 .dot{width:8px;height:8px;border-radius:999px;display:inline-block}
@@ -71,18 +83,37 @@ p{margin:0}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em}
 .brand-mark{width:32px;height:32px;border-radius:8px;background:var(--accent)}
+.brand-logo{height:28px;width:auto;display:block}
 .nav-links{display:none;gap:28px;color:var(--text-muted);font-size:14px}
 .nav-links a:hover{color:#fff}
 .nav-cta{display:none}
 
 /* mobile menu (checkbox hack) */
-#nav-toggle{display:none}
-.burger{display:flex;flex-direction:column;gap:5px;cursor:pointer}
+.burger{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  padding:4px;
+  background:transparent;
+  border:0;
+  color:inherit;
+  -webkit-appearance:none;
+  appearance:none;
+}
+.burger:focus{outline:2px solid var(--cta);outline-offset:3px}
 .burger span{display:block;width:22px;height:2px;background:#fff}
-.mobile-menu{display:none;border-top:1px solid var(--border)}
-#nav-toggle:checked ~ .mobile-menu{display:block}
-.mobile-menu a{display:block;padding:12px 0;color:var(--text-muted)}
-.mobile-actions{padding:12px 0}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(14,17,22,.96);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:24px 0;max-height:calc(100vh - 64px);overflow-y:auto;z-index:40}
+.mobile-menu .container{display:grid;gap:24px}
+.mobile-group{display:grid;gap:12px}
+.mobile-group + .mobile-group{border-top:1px solid rgba(42,50,66,.6);padding-top:16px}
+.mobile-group-title{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.mobile-links{display:grid;gap:12px}
+.mobile-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0;color:var(--text-muted);text-decoration:none}
+.mobile-links a:hover{color:#fff}
+.mobile-actions{padding:8px 0;display:grid;gap:12px}
+body.nav-open{overflow:hidden}
+body.nav-open .mobile-menu{display:block}
 
 /* ---------- Hero ---------- */
 .hero{
@@ -97,7 +128,47 @@ p{margin:0}
 
 /* ---------- Trust Bar ---------- */
 .trust{background:#0F141C;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.logo-pill{height:34px;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:#7C8599;display:flex;align-items:center;justify-content:center;font-size:12px}
+.logo-pill{min-height:40px;padding:8px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:#AEB6C2;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;line-height:1.2;text-decoration:none;transition:.2s ease}
+.logo-pill:hover{border-color:var(--cta);color:#fff;box-shadow:0 6px 20px -10px rgba(43,89,255,.5)}
+
+/* Tech badges */
+.tech-badges{display:flex;align-items:center;gap:12px;margin-top:12px;opacity:.95;flex-wrap:wrap}
+.tech-badges img{height:22px;width:auto;display:block;filter:none}
+
+@media (max-width: 767px){
+  .section{padding:48px 0}
+  .section-sm{padding:32px 0}
+  .header{border-bottom:1px solid rgba(42,50,66,.6)}
+  .brand{gap:8px}
+  .brand-logo{height:26px}
+  .hero-card{margin-top:28px}
+  .hero-card iframe{height:520px!important}
+  .hero h1{font-size:34px}
+  .hero p{font-size:16px}
+  .tech-badges{gap:10px;margin-top:10px}
+  .trust .container{gap:12px}
+  .grid.grid-auto-pill{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x proximity;
+    padding-bottom:8px;
+    -webkit-overflow-scrolling:touch;
+  }
+  /* Keep scrollbar visible on mobile for discoverability */
+  .grid.grid-auto-pill{scrollbar-width:thin}
+  .grid.grid-auto-pill::-webkit-scrollbar{height:8px}
+  .grid.grid-auto-pill .logo-pill{
+    flex:0 0 auto;
+    white-space:nowrap;
+    scroll-snap-align:center;
+  }
+  .logo-pill{font-size:11px;padding:10px 12px}
+  .grid{gap:20px}
+  details .details-panel{padding:16px}
+  details .actions{gap:12px}
+  .portfolio-grid{gap:20px}
+  .portfolio-grid.has-open .card.active{box-shadow:0 16px 40px -20px rgba(0,0,0,.5)}
+}
 
 /* ---------- Pillars ---------- */
 .pillar h3{font-size:20px}
@@ -118,8 +189,9 @@ p{margin:0}
 /* ---------- Footer ---------- */
 footer{border-top:1px solid var(--border);margin-top:64px}
 footer .grid{grid-template-columns:1fr}
-footer a{color:var(--text-muted);text-decoration:none}
+footer a{color:var(--text-muted);text-decoration:none;overflow-wrap:anywhere}
 footer a:hover{color:#fff}
+footer h4{margin:0 0 8px 0;font-size:18px;line-height:1.3}
 .footer-bottom{color:#7C8599;font-size:12px;padding-bottom:24px}
 
 /* ---------- Forms ---------- */
@@ -133,9 +205,38 @@ footer a:hover{color:#fff}
 @media (min-width: 768px){
   .grid-2{grid-template-columns:1fr 1fr}
   .grid-3{grid-template-columns:1fr 1fr 1fr}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
   .nav-links{display:flex}
   .nav-cta{display:block}
   .burger{display:none}
   .mobile-menu{display:none !important}
   .hero h1{font-size:52px}
+  /* Footer: switch to two columns for medium widths */
+  .footer-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
 }
+
+@media (min-width: 1024px){
+  .grid-4{grid-template-columns:repeat(4,1fr)}
+  .grid-auto-pill{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+}
+
+/* Large screens: show four balanced footer columns */
+@media (min-width: 1200px){
+  .footer-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)}
+}
+
+/* ---------- Details / Accordions ---------- */
+details.details{margin-top:12px}
+details.details > summary{list-style:none;cursor:pointer}
+details.details > summary::-webkit-details-marker{display:none}
+details .details-panel{margin-top:12px;padding:20px;border:1px solid var(--border);border-radius:12px;box-shadow:0 16px 40px -20px rgba(0,0,0,.5)}
+details .details-panel h4{margin:0;font-size:16px}
+details .details-panel .subtitle{margin-top:6px}
+details .details-panel ul{margin:8px 0 0 18px}
+details .actions{margin-top:18px;display:flex;gap:16px;flex-wrap:wrap}
+
+/* Overlay + z-index to emphasize active card */
+.portfolio-grid{position:relative}
+.portfolio-grid .card{position:relative;transition:transform .2s ease, box-shadow .2s ease, opacity .2s ease}
+.portfolio-grid.has-open .card.active{transform:translateY(-1px);box-shadow:0 22px 60px -24px rgba(0,0,0,.6);opacity:1}
+.portfolio-grid.has-open .card.inactive{opacity:.85;pointer-events:auto}
