@@ -1,0 +1,141 @@
+/* Werkbold — Option A (Executive Tech) */
+/* ---------- Design Tokens ---------- */
+:root{
+  --bg:#0E1116; --surface:#1C2330; --paper:#F7F7F5;
+  --text:#FFFFFF; --text-muted:#C9D0D8;
+  --cta:#2B59FF; --cta-hover:#2349D1; --cta-active:#1B3AA8;
+  --accent:#C6A15B; --success:#16A34A; --warning:#F59E0B; --danger:#DC2626;
+  --border:#2A3242;
+}
+
+/* ---------- Base ---------- */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+.section{padding:64px 0}
+.section-sm{padding:40px 0}
+h1,h2,h3{line-height:1.2;margin:0}
+p{margin:0}
+.subtitle{color:var(--text-muted);margin-top:8px;max-width:720px}
+
+/* ---------- Utilities ---------- */
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,.4);
+}
+.grid{display:grid;gap:24px}
+.grid-2{grid-template-columns:1fr}
+.grid-3{grid-template-columns:1fr}
+.center{display:flex;align-items:center;justify-content:center}
+.badge{display:inline-flex;gap:8px;align-items:center;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
+.dot{width:8px;height:8px;border-radius:999px;display:inline-block}
+.dot-teal{background:#14B8A6}
+.dot-violet{background:#7C3AED}
+.dot-brass{background:var(--accent)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:10px;
+  padding:12px 18px;border-radius:12px;border:1px solid transparent;
+  font-weight:600;font-size:14px;cursor:pointer;
+  transition:.2s ease;
+}
+.btn:focus{outline:2px solid var(--cta);outline-offset:2px}
+.btn-primary{background:var(--cta);color:#fff;box-shadow:0 10px 30px -10px rgba(43,89,255,.6)}
+.btn-primary:hover{background:var(--cta-hover)}
+.btn-primary:active{background:var(--cta-active)}
+.btn-ghost{background:transparent;border-color:var(--cta);color:var(--cta)}
+.btn-ghost:hover{background:rgba(43,89,255,.08)}
+
+/* ---------- Header ---------- */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{left:12px;top:12px;width:auto;height:auto;background:#000;color:#fff;padding:8px 12px;border-radius:8px;z-index:9999}
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(14,17,22,.8);backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em}
+.brand-mark{width:32px;height:32px;border-radius:8px;background:var(--accent)}
+.nav-links{display:none;gap:28px;color:var(--text-muted);font-size:14px}
+.nav-links a:hover{color:#fff}
+.nav-cta{display:none}
+
+/* mobile menu (checkbox hack) */
+#nav-toggle{display:none}
+.burger{display:flex;flex-direction:column;gap:5px;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:#fff}
+.mobile-menu{display:none;border-top:1px solid var(--border)}
+#nav-toggle:checked ~ .mobile-menu{display:block}
+.mobile-menu a{display:block;padding:12px 0;color:var(--text-muted)}
+.mobile-actions{padding:12px 0}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1000px 600px at 10% -20%, rgba(43,89,255,.25), transparent),
+    radial-gradient(800px 400px at 90% -20%, rgba(198,161,91,.18), transparent);
+}
+.hero h1{font-size:40px}
+.hero p{font-size:18px;color:var(--text-muted)}
+.hero-card{padding:24px}
+
+/* ---------- Trust Bar ---------- */
+.trust{background:#0F141C;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.logo-pill{height:34px;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:#7C8599;display:flex;align-items:center;justify-content:center;font-size:12px}
+
+/* ---------- Pillars ---------- */
+.pillar h3{font-size:20px}
+.pillar p{color:var(--text-muted)}
+
+/* ---------- KPI Bar ---------- */
+.kpi .card{padding:16px;text-align:center}
+.kpi .value{font-size:26px;font-weight:900}
+.kpi .label{font-size:12px;color:var(--text-muted);margin-top:6px}
+
+/* ---------- Process ---------- */
+.band{background:#0F141C;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.step .kicker{color:#7C8599;font-size:13px}
+
+/* ---------- CTA Band ---------- */
+.cta-band .card{padding:24px}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--border);margin-top:64px}
+footer .grid{grid-template-columns:1fr}
+footer a{color:var(--text-muted);text-decoration:none}
+footer a:hover{color:#fff}
+.footer-bottom{color:#7C8599;font-size:12px;padding-bottom:24px}
+
+/* ---------- Forms ---------- */
+.input, .select{
+  width:100%;border-radius:12px;background:var(--surface);border:1px solid var(--border);
+  padding:12px 14px;color:var(--text);font-size:14px
+}
+.input::placeholder{color:#7C8599}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 768px){
+  .grid-2{grid-template-columns:1fr 1fr}
+  .grid-3{grid-template-columns:1fr 1fr 1fr}
+  .nav-links{display:flex}
+  .nav-cta{display:block}
+  .burger{display:none}
+  .mobile-menu{display:none !important}
+  .hero h1{font-size:52px}
+}
