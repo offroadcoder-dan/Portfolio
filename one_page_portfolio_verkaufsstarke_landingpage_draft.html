@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dein Name – Shopify B2B Automationen, Webdesign & Social</title>
+  <meta name="description" content="Ich automatisiere Shopify‑B2B‑Shops: Großhandels‑Preise, Staffelpreise, individuelle Kataloge, Freigaben & ERP/CRM‑Anbindung. Plus Webdesign & Print sowie Social & Influencer‑Marketing. Termin buchen." />
+  <meta property="og:title" content="Dein Name – Shopify B2B Automationen & Webdesign" />
+  <meta property="og:description" content="Automatisierte B2B‑Prozesse in Shopify: Preislisten, Kataloge, Quick‑Order, Aktionen (z. B. 4+1) & Integrationen. Dazu Webdesign/Print und Social/Influencer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.deinedomain.de/" />
+  <meta property="og:image" content="https://www.deinedomain.de/og-image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14; /* sehr dunkles Blau/Grau */
+      --card:#10161f;
+      --muted:#6b7280;
+      --text:#e5e7eb;
+      --brand:#4f46e5; /* Indigo */
+      --brand-2:#22d3ee; /* Cyan Akzent */
+      --ok:#10b981;
+      --warn:#f59e0b;
+      --danger:#ef4444;
+      --ring: 0 0 0 6px rgba(79,70,229,.15);
+      --radius:20px;
+      --shadow: 0 10px 30px rgba(0,0,0,.25), 0 2px 6px rgba(0,0,0,.15);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:linear-gradient(180deg,#0b0f14 0%, #0c121a 70%, #0b0f14 100%);color:var(--text);font-family:'Inter',system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.4}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1100px, 92%);margin-inline:auto}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--brand);color:white;padding:.9rem 1.2rem;border-radius:999px;font-weight:600;border:0;cursor:pointer;box-shadow:var(--shadow);transition:transform .08s ease, box-shadow .2s ease}
+    .btn.secondary{background:transparent;border:1px solid #263042;color:var(--text)}
+    .btn:hover{transform:translateY(-1px)}
+    .btn:focus-visible{outline:none;box-shadow:var(--ring)}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.6);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #151c26}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+    .logo{display:flex;align-items:center;gap:.65rem;font-weight:800;letter-spacing:.3px}
+    .logo-badge{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;font-weight:800}
+    .nav a{color:var(--text);opacity:.9}
+    .nav ul{display:flex;gap:1.2rem;align-items:center;list-style:none;margin:0;padding:0}
+    .hero{padding:clamp(2rem,4vw,4rem) 0 2rem}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(79,70,229,.15);padding:.3rem .6rem;border-radius:999px;font-size:.82rem;color:#c7d2fe;border:1px solid rgba(79,70,229,.35)}
+    h1{font-size:clamp(2rem,4.2vw,3.6rem);line-height:1.1;margin:.8rem 0 .6rem}
+    .subtitle{font-size:1.05rem;color:#cbd5e1;max-width:56ch}
+    .hero-card{background:radial-gradient(1200px 600px at 0% 0%, rgba(79,70,229,.15), transparent), var(--card);border:1px solid #1b2431;border-radius:var(--radius);padding:1.2rem;box-shadow:var(--shadow)}
+    .hero-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+    .metric{background:#0f1520;border:1px solid #1b2431;border-radius:18px;padding:.9rem}
+    .metric strong{font-size:1.4rem}
+    .scroller{margin-top:2rem;display:flex;gap:1rem;overflow:auto;padding-bottom:.4rem}
+    .badge{border:1px solid #263042;border-radius:999px;padding:.5rem .8rem;color:#cbd5e1;white-space:nowrap;background:linear-gradient(180deg,#0d1420,#0b111b)}
+    .section{padding:clamp(2.2rem,6vw,5rem) 0}
+    .section h2{font-size:clamp(1.6rem,3.2vw,2.2rem);margin:0 0 1.2rem}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .card{background:var(--card);border:1px solid #1b2431;border-radius:var(--radius);padding:1.2rem;box-shadow:var(--shadow)}
+    .card .price{font-size:1.8rem;font-weight:800}
+    .check{color:var(--ok);margin-right:.4rem}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .work{background:linear-gradient(180deg,#0f1622,#0d1420);border:1px solid #1b2431;border-radius:18px;overflow:hidden}
+    .work img{width:100%;height:180px;object-fit:cover;display:block}
+    .work .inner{padding:1rem}
+    .timeline{position:relative;padding-left:1.2rem}
+    .timeline::before{content:"";position:absolute;left:.4rem;top:0;bottom:0;width:2px;background:#243043}
+    .step{position:relative;padding-left:1rem;margin-bottom:1rem}
+    .step::before{content:"";position:absolute;left:-.05rem;top:.4rem;width:.8rem;height:.8rem;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 0 0 4px rgba(79,70,229,.25)}
+    .tools{display:flex;flex-wrap:wrap;gap:.6rem}
+    .tool{border:1px dashed #2a3345;border-radius:999px;padding:.5rem .8rem;opacity:.9}
+    .about{display:grid;grid-template-columns:160px 1fr;gap:1rem;align-items:center}
+    .about .avatar{width:160px;height:160px;border-radius:20px;background:linear-gradient(135deg,#1f2937,#0f172a);border:1px solid #1b2431}
+    .testimonial{background:linear-gradient(180deg,#0f1521,#0b111b);border:1px solid #1b2431;border-radius:18px;padding:1rem}
+    .faq details{background:var(--card);border:1px solid #1b2431;border-radius:14px;padding:1rem}
+    .faq details+details{margin-top:.7rem}
+    .cta-bar{position:sticky;bottom:1rem;z-index:40}
+    .cta-inner{width:min(900px,96%);margin-inline:auto;background:linear-gradient(90deg,rgba(79,70,229,.2),rgba(34,211,238,.2));border:1px solid #273046;border-radius:999px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem .8rem}
+    footer{border-top:1px solid #151c26;padding:2rem 0;color:#94a3b8}
+    .kpi{display:flex;align-items:center;gap:.6rem}
+    .kpi small{color:#94a3b8}
+
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .portfolio{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo"><div class="logo-badge">∆</div> <span>Dein Name</span></div>
+      <nav>
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#projekte">Projekte</a></li>
+          <li><a href="#prozess">Prozess</a></li>
+          <li><a href="#ueber-mich">Über mich</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a class="btn" href="#termin">Termin buchen</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="container hero" id="home">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Shopify B2B · Automationen</span>
+          <h1>Ich automatisiere deinen Shopify‑B2B‑Shop – Preise, Kataloge & Prozesse, die von selbst laufen.</h1>
+          <p class="subtitle">Großhandelskonditionen (z. B. 4+1), Staffelpreise, Kundengruppen, individuelle Kataloge, Quick‑Order & ERP/CRM‑Flows. Dazu Webdesign & Print sowie Social/Influencer – alles aus einer Hand.</p>
+          <div style="margin-top:1.2rem;display:flex;gap:.7rem;flex-wrap:wrap">
+            <a class="btn" href="#termin">B2B‑Shop automatisieren</a>
+            <a class="btn secondary" href="#leistungen">Leistungen ansehen</a>
+          </div>
+          <div class="scroller" aria-label="Proof & Highlights">
+            <span class="badge">Shopify B2B</span>
+            <span class="badge">Preislisten & Kundengruppen</span>
+            <span class="badge">Quick‑Order</span>
+            <span class="badge">Netto/Brutto + USt‑ID</span>
+            <span class="badge">ERP/CRM‑Sync</span>
+            <span class="badge">Aktionen 4+1 / 4+4</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-metrics">
+            <div class="metric">
+              <div class="kpi"><strong>+72%</strong> <small>Bestelltempo</small></div>
+              <small class="muted">durch Quick‑Order & Wiederkäufe</small>
+            </div>
+            <div class="metric">
+              <div class="kpi"><strong>−60%</strong> <small>manuelle Schritte</small></div>
+              <small class="muted">via Automationen & Syncs</small>
+            </div>
+            <div class="metric">
+              <div class="kpi"><strong>−35%</strong> <small>Fehlerquote</small></div>
+              <small class="muted">Preislisten & Workflows</small>
+            </div>
+          </div>
+              <small class="muted">über 18 Kunden / 12 Monate</small>
+            </div>
+            <div class="metric">
+              <div class="kpi"><strong>−41%</strong> <small>CPL</small></div>
+              <small class="muted">durch Lead-Qualifizierung & Nurturing</small>
+            </div>
+            <div class="metric">
+              <div class="kpi"><strong>+68%</strong> <small>SQL-Rate</small></div>
+              <small class="muted">Sales-ready Leads statt nur E-Mails</small>
+            </div>
+          </div>
+          <ul style="margin:1rem 0 0;padding-left:1.2rem;color:#cbd5e1">
+            <li><span class="check">✔</span>B2B‑Preislisten & Kundengruppen</li>
+            <li><span class="check">✔</span>Staffelpreise & Aktionen (z. B. 4+1, 4+4)</li>
+            <li><span class="check">✔</span>Genehmigungs‑Workflows & Zahlungsarten</li>
+            <li><span class="check">✔</span>Kataloge, Mindestmengen & Quick‑Order</li>
+            <li><span class="check">✔</span>ERP/CRM/Versand‑Integrationen</li>
+          </ul>
+          <p style="margin:.8rem 0 0;color:#9ca3af">ℹ️ Kennzahlen sind Beispiele/Platzhalter – gern durch echte KPIs ersetzen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leistungen / Angebote -->
+    <section class="section" id="leistungen">
+      <div class="container">
+        <h2>Leistungen & Pakete</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Shopify B2B Automationen</h3>
+            <p>Preislisten, Kataloge & Workflows – komplett auf Shopify umgesetzt.</p>
+            <ul style="padding-left:1.2rem">
+              <li><span class="check">✔</span>Preislisten, Kundengruppen, Staffelpreise</li>
+              <li><span class="check">✔</span>Aktionen (z. B. 4+1, 4+4) & Mindestmengen</li>
+              <li><span class="check">✔</span>Quick‑Order & individuelles Sortiment</li>
+              <li><span class="check">✔</span>ERP/CRM/Buchhaltung‑Sync (z. B. Lexoffice, Billbee, Pipedrive)</li>
+            </ul>
+            <p class="price">ab € X.XXX</p>
+            <a class="btn" href="#termin">Projekt anfragen</a>
+          </article>
+          <article class="card">
+            <h3>Webdesign & Print (Flyerverkauf)</h3>
+            <p>Design → Druck → Lieferung. Du bekommst alles aus einer Hand.</p>
+            <ul style="padding-left:1.2rem">
+              <li><span class="check">✔</span>Landingpages, Corporate‑Websites</li>
+              <li><span class="check">✔</span>Flyer, Broschüren, Plakate</li>
+              <li><span class="check">✔</span>Druckdaten, Produktion & Versand</li>
+              <li><span class="check">✔</span>Option: Shop‑Anbindung für Nachbestellungen</li>
+            </ul>
+            <p class="price">ab € XXX zzgl. Druck</p>
+            <a class="btn" href="#termin">Angebot erhalten</a>
+          </article>
+          <article class="card">
+            <h3>Social Media & Influencer</h3>
+            <p>Content‑Erstellung, Planung & Creator‑Koops – mit messbaren Zielen.</p>
+            <ul style="padding-left:1.2rem">
+              <li><span class="check">✔</span>Redaktionsplan & Content‑Produktion</li>
+              <li><span class="check">✔</span>Community & Reporting</li>
+              <li><span class="check">✔</span>Influencer‑Sourcing & Verhandlung</li>
+              <li><span class="check">✔</span>Tracking von Leads/Sales</li>
+            </ul>
+            <p class="price">ab € X.XXX/Monat</p>
+            <a class="btn" href="#termin">Social starten</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio / Projekte -->
+    <section class="section" id="projekte">
+      <div class="container">
+        <h2>Ausgewählte Projekte</h2>
+        <div class="portfolio">
+          <article class="work">
+            <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1600&auto=format&fit=crop" alt="Shopify B2B Case – Platzhalter" />
+            <div class="inner">
+              <h3>Case: Großhandel B2B</h3>
+              <p>Preislisten + Quick‑Order → <strong>+48% Warenkorbwert</strong>, <strong>−44% E‑Mail‑Anfragen</strong> (Self‑Service).</p>
+              <a href="#">Details ansehen →</a>
+            </div>
+          </article>
+          <article class="work">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" alt="Webdesign & Print Case – Platzhalter" />
+            <div class="inner">
+              <h3>Case: Web & Flyerverkauf</h3>
+              <p>Landingpages + 15k Flyer‑Produktion → <strong>1,9% CR</strong> & lokales Brand‑Uplift.</p>
+              <a href="#">Details ansehen →</a>
+            </div>
+          </article>
+          <article class="work">
+            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop" alt="Social & Influencer Case – Platzhalter" />
+            <div class="inner">
+              <h3>Case: Social & Influencer</h3>
+              <p>Creator‑Programm in Nische → <strong>+38 qualifizierte Leads/Monat</strong>.</p>
+              <a href="#">Details ansehen →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prozess / Funnel -->
+    <section class="section" id="prozess">
+      <div class="container grid-2">
+        <div>
+          <h2>So automatisiere ich deinen B2B‑Shop</h2>
+          <div class="timeline">
+            <div class="step"><h4>1 · Analyse & Zielbild</h4><p>Preismodelle, Kataloglogik, Rollen/Rechte & Systeme.</p></div>
+            <div class="step"><h4>2 · Daten & Struktur</h4><p>Kundengruppen, Preislisten, Staffelregeln, Sortimente.</p></div>
+            <div class="step"><h4>3 · Implementierung</h4><p>Shopify B2B, Flow/Functions, Templates & Quick‑Order.</p></div>
+            <div class="step"><h4>4 · Integrationen</h4><p>ERP/CRM/Buchhaltung & Versand; Automationen & Syncs.</p></div>
+            <div class="step"><h4>5 · Test & Go‑Live</h4><p>UAT, Netto/Brutto, USt‑ID‑Prüfung, Freigaben.</p></div>
+            <div class="step"><h4>6 · Betrieb & Ausbau</h4><p>Monitoring, Optimierung, neue Aktionen & Reports.</p></div>
+          </div>
+            <div class="step"><h4>2 · Hypothesen</h4><p>Wachstumshebel priorisieren, Roadmap & KPIs definieren.</p></div>
+            <div class="step"><h4>3 · Setup</h4><p>Ads, Landing, Tracking, E‑Mail & CRM sauber aufsetzen.</p></div>
+            <div class="step"><h4>4 · Launch</h4><p>Testen, lernen, iterieren – mit klaren Entscheidungsregeln.</p></div>
+            <div class="step"><h4>5 · Scale</h4><p>Budget skalieren, Creatives optimieren, LTV & CAC balancieren.</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <h3>Dein Tech‑Stack</h3>
+            <div class="tools" style="margin-top:.6rem">
+              <span class="tool">Shopify</span>
+              <span class="tool">Shopify B2B</span>
+              <span class="tool">Shopify Flow</span>
+              <span class="tool">Shopify Functions</span>
+              <span class="tool">Liquid</span>
+              <span class="tool">ShopifyQL</span>
+              <span class="tool">HubSpot</span>
+              <span class="tool">Pipedrive</span>
+              <span class="tool">Lexoffice</span>
+              <span class="tool">Billbee</span>
+              <span class="tool">Datev</span>
+              <span class="tool">Zapier</span>
+              <span class="tool">Make</span>
+              <span class="tool">ShipStation</span>
+              <span class="tool">Calendly</span>
+              <span class="tool">(Druck) Flyeralarm</span>
+              <span class="tool">(Druck) Onlineprinters</span>
+            </div>
+            <p style="color:#9ca3af;margin-top:.8rem">ℹ️ Tools sind Beispiele – ich integriere gern deine Systeme.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Über mich -->
+    <section class="section" id="ueber-mich">
+      <div class="container about">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <h2>Hi, ich bin <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">Dein Name</span>.</h2>
+          <p>Ich helfe B2B‑Unternehmen, ihren Vertrieb zu digitalisieren: Shopify‑B2B‑Automationen (Preislisten, Kataloge, Workflows), Webdesign & Print‑Abwicklung sowie Social‑ & Influencer‑Marketing – effizient, messbar und praxisnah.</p>
+          <ul style="padding-left:1.2rem;color:#cbd5e1">
+            <li><span class="check">✔</span>B2B & Großhandel, Hersteller, Distributoren</li>
+            <li><span class="check">✔</span>Shopify‑Setups von Kleinbetrieb bis Enterprise</li>
+            <li><span class="check">✔</span>Komplettservice: Technik, Design, Content</li>
+          </ul>
+          <div style="margin-top:.6rem;display:flex;gap:.6rem;flex-wrap:wrap">
+            <a class="btn" href="#termin">Lass sprechen</a>
+            <a class="btn secondary" href="#kontakt">Kontakt</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" id="stimmen">
+      <div class="container">
+        <h2>Was Kunden sagen</h2>
+        <div class="grid-2">
+          <figure class="testimonial"><blockquote>„Klarer Plan, saubere Umsetzung und echte Ergebnisse. Nach 6 Wochen waren die ersten SQLs da – nach 12 der ROI.“</blockquote><figcaption>— Person A, COO @ Firma</figcaption></figure>
+          <figure class="testimonial"><blockquote>„Strukturiert, pragmatisch, datengetrieben. Genau die Art Partner, die wir gebraucht haben.“</blockquote><figcaption>— Person B, Gründer:in @ Brand</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Magnet -->
+    <section class="section" id="resources">
+      <div class="container card">
+        <div class="grid-2">
+          <div>
+            <h3>Kostenlose Checkliste: Shopify‑B2B in 30 Minuten prüfen</h3>
+            <p>Prüfliste für Preislisten, Kundengruppen, Kataloge, Quick‑Order, Aktionen (4+1), Netto/Brutto & Integrationen. Ideal für deinen Kickoff.</p>
+          </div>
+          <form id="lead-form" action="#" method="post" onsubmit="return onLeadSubmit(event)">
+            <label for="email">E‑Mail</label>
+            <div style="display:flex;gap:.6rem;margin-top:.4rem">
+              <input id="email" name="email" type="email" required placeholder="deine@mail.de" style="flex:1;border-radius:999px;border:1px solid #2a3345;background:#0d1420;color:#e5e7eb;padding:.8rem 1rem" />
+              <button class="btn" type="submit">PDF bekommen</button>
+            </div>
+            <small style="color:#94a3b8;display:block;margin-top:.4rem">Mit dem Download stimmst du zu, gelegentlich nützliche E‑Mails zu erhalten. Abmeldung jederzeit.</small>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <h2>Häufige Fragen</h2>
+        <details><summary>Wie schnell können wir starten?</summary><p>Kickoff meist in 7–14 Tagen. Ein typisches B2B‑Setup dauert 2–6 Wochen – je nach Integrationen.</p></details>
+        <details><summary>Welche B2B‑Funktionen sind möglich?</summary><p>Preislisten/Kundengruppen, Staffelpreise, Aktionen (4+1/4+4), Mindestmengen, Quick‑Order, Netto/Brutto, USt‑ID‑Prüfung, Rollen/Rechte & Freigaben.</p></details>
+        <details><summary>Welche Systeme integriert ihr?</summary><p>ERP/CRM/Buchhaltung/Versand wie HubSpot, Pipedrive, Lexoffice, Billbee, Datev, ShipStation u. a. – sag mir, was du nutzt.</p></details>
+        <details><summary>Übernehmt ihr auch Druck & Versand?</summary><p>Ja. Von Design über Druckdaten bis zur Lieferung (Flyer, Broschüren, Plakate).</p></details>
+        <details><summary>Betreut ihr Social & Influencer laufend?</summary><p>Ja. Redaktion, Content‑Produktion, Community & Creator‑Kooperationen – mit klaren Zielen und Reporting.</p></details>
+      </div>
+    </section>
+
+    <!-- Kontakt & Termin -->
+    <section class="section" id="kontakt">
+      <div class="container grid-2">
+        <div>
+          <h2>Kontakt</h2>
+          <p>E‑Mail: <a href="mailto:hallo@deinedomain.de">hallo@deinedomain.de</a><br>LinkedIn: <a href="#">@deinprofil</a></p>
+          <p style="color:#94a3b8">Impressum & Datenschutz: <a href="#">Hier ergänzen</a></p>
+        </div>
+        <div id="termin" class="card">
+          <h3>Termin buchen</h3>
+          <p>Wähle hier einfach einen freien Slot:</p>
+          <!-- TODO: Ersetze die URL unten mit deinem echten Calendly-Link -->
+          <div class="calendly-inline-widget" data-url="https://calendly.com/DEIN-CALENDLY-USERNAME/30min?hide_landing_page_details=1&hide_gdpr_banner=1" style="min-width:320px;height:680px"></div>
+          <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky CTA unten -->
+  <div class="cta-bar" aria-hidden="false">
+    <div class="cta-inner">
+      <strong>Bereit, deinen B2B‑Shop zu automatisieren?</strong>
+      <a class="btn" href="#termin">Kostenloses Erstgespräch</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <small>© <span id="year"></span> Dein Name</small>
+        <small>Made with ♥ – Diese Seite ist ein Draft. Inhalte bitte ersetzen.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Jahr im Footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth Scrolling für Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+
+    // Fake Lead‑Magnet (ersetzt später durch echten Provider wie Mailchimp/Klaviyo/Formspree)
+    function onLeadSubmit(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      if(!email) return false;
+      alert('Danke! Ich sende dir die Checkliste per E‑Mail. (Demo)');
+      // TODO: Hier echten Endpoint eintragen, z.B. Formspree/Netlify/Mailchimp.
+      return false;
+    }
+  </script>
+
+  <!-- Strukturierte Daten (bitte mit echten Daten ersetzen) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dein Name",
+    "jobTitle": "Shopify B2B Automationen, Webdesign & Social",
+    "url": "https://www.deinedomain.de/",
+    "sameAs": ["https://www.linkedin.com/in/deinprofil"],
+    "worksFor": {"@type":"Organization","name":"Dein Unternehmen"}
+  }
+  </script>
+
+  <!-- Optional: Analytics (später ersetzen) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script> -->
+</body>
+</html>
