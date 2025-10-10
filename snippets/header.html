@@ -1,0 +1,84 @@
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Zur Startseite">
+      <img class="brand-logo" src="assets/WERKBOLD-Logo.png" alt="WERKBOLD" loading="eager">
+    </a>
+
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="index.html#leistungen">Leistungen</a>
+      <a href="index.html#cases">Case Studies</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="index.html#branchen">Branchen</a>
+      <a href="index.html#ressourcen">Ressourcen</a>
+      <a href="index.html#ueber">Über</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="index.html#kalender" target="_self" rel="noopener">Strategie‑Call buchen</a>
+    </div>
+
+    <button type="button" class="burger" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="container">
+      <div class="mobile-group">
+        <p class="mobile-group-title">Seiten</p>
+        <nav class="mobile-links" aria-label="Seiten">
+          <a href="index.html">Startseite</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="b2b-shops-automation.html">B2B‑Shops & Automation</a>
+          <a href="social-media-content.html">Social Media Content</a>
+          <a href="brand-und-print.html">Brand & Print</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+      </div>
+      <div class="mobile-group">
+        <p class="mobile-group-title">Abschnitte</p>
+        <nav class="mobile-links" aria-label="Abschnitte der Startseite">
+          <a href="index.html#leistungen">Leistungen</a>
+          <a href="index.html#cases">Case Studies</a>
+          <a href="index.html#branchen">Branchen</a>
+          <a href="index.html#ressourcen">Ressourcen</a>
+          <a href="index.html#ueber">Über</a>
+        </nav>
+      </div>
+      <div class="mobile-actions">
+        <a class="btn btn-primary" href="index.html#kalender" rel="noopener">Strategie‑Call buchen</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const mobileMenu = document.getElementById('mobile-menu');
+      const burger = document.querySelector('.burger');
+      if(!mobileMenu || !burger){ return; }
+
+      let isOpen = false;
+      const setState = (open) => {
+        isOpen = open;
+        document.body.classList.toggle('nav-open', open);
+        burger.setAttribute('aria-expanded', String(open));
+        mobileMenu.setAttribute('aria-hidden', String(!open));
+      };
+
+      burger.addEventListener('click', () => setState(!isOpen));
+      document.addEventListener('keydown', (event) => {
+        if(event.key === 'Escape' && isOpen){ setState(false); }
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setState(false)));
+
+      const mq = window.matchMedia('(min-width: 768px)');
+      const onChange = (e) => { if(e.matches){ setState(false); } };
+      if(mq.addEventListener){ mq.addEventListener('change', onChange); } else if(mq.addListener){ mq.addListener(onChange); }
+
+      setState(false);
+    })();
+  </script>
+</header>
+

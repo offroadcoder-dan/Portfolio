@@ -1,0 +1,51 @@
+<section class="trust section-sm">
+  <div class="container logos-horizontal">
+    <!-- Kundenlogos (farbig, ohne Rahmen) -->
+    <div class="logo-pill"><img class="to-white" src="assets/Dr.Hauck.png" alt="Dr. Hauck" loading="lazy" decoding="async"></div>
+    <div class="logo-pill"><img src="assets/stmwi.png" alt="Bayerisches Staatsministerium für Wirtschaft, Landesentwicklung und Energie" loading="lazy" decoding="async"></div>
+    <div class="logo-pill"><img src="assets/Kibler.avif" alt="Kibler Teppiche" loading="lazy" decoding="async"></div>
+    <div class="logo-pill"><img src="assets/Relax-appartements.png" alt="Relax Appartements" loading="lazy" decoding="async"></div>
+    <div class="logo-pill"><img src="assets/Fightschool-kempten.png" alt="Fight School Kempten" loading="lazy" decoding="async"></div>
+  </div>
+</section>
+
+<script>
+  (function(){
+    const scroller = document.querySelector('.trust .logos-horizontal');
+    if(!scroller) return;
+
+    // Center initial position if overflowing; keep centered otherwise
+    function centerTrack(){
+      const canScroll = scroller.scrollWidth > scroller.clientWidth;
+      if(canScroll){
+        scroller.scrollLeft = (scroller.scrollWidth - scroller.clientWidth) / 2;
+      }
+    }
+
+    // Smoothly translate vertical wheel to horizontal scroll
+    function onWheel(e){
+      const canScroll = scroller.scrollWidth > scroller.clientWidth;
+      if(!canScroll) return; // nothing to do
+      const delta = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+      if(delta !== 0){
+        e.preventDefault();
+        scroller.scrollBy({ left: delta, behavior: 'smooth' });
+      }
+    }
+
+    // Watch for image load/resize to recalc sizes
+    const imgs = Array.from(scroller.querySelectorAll('img'));
+    let pending = imgs.length;
+    if(pending === 0) centerTrack();
+    imgs.forEach(img => {
+      if(img.complete){ pending--; if(pending === 0) centerTrack(); }
+      else{
+        const done = () => { pending--; if(pending === 0) centerTrack(); };
+        img.addEventListener('load', done, { once: true });
+        img.addEventListener('error', done, { once: true });
+      }
+    });
+    window.addEventListener('resize', centerTrack);
+    scroller.addEventListener('wheel', onWheel, { passive: false });
+  })();
+</script>

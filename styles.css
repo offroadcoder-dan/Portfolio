@@ -37,6 +37,11 @@ p{margin:0}
 /* Ensure anchored sections are not hidden behind sticky header */
 section{scroll-margin-top:80px}
 
+/* ---------- Vertical Slides (Scroll Snap) ---------- */
+/* Make sections snap vertically like slides without being too aggressive */
+body{scroll-snap-type:y proximity; scroll-padding-top:64px}
+main > section{scroll-snap-align:start}
+
 /* ---------- Utilities ---------- */
 .card{
   background:var(--surface);
@@ -83,7 +88,7 @@ section{scroll-margin-top:80px}
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em}
 .brand-mark{width:32px;height:32px;border-radius:8px;background:var(--accent)}
-.brand-logo{height:28px;width:auto;display:block}
+.brand-logo{height:clamp(32px, 4vw, 44px);width:auto;display:block}
 .nav-links{display:none;gap:28px;color:var(--text-muted);font-size:14px}
 .nav-links a:hover{color:#fff}
 .nav-cta{display:none}
@@ -128,8 +133,49 @@ body.nav-open .mobile-menu{display:block}
 
 /* ---------- Trust Bar ---------- */
 .trust{background:#0F141C;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.trust{--trust-logo-h: clamp(32px, 6vw, 60px); --trust-logo-w: clamp(120px, 16vw, 220px)}
 .logo-pill{min-height:40px;padding:8px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--border);color:#AEB6C2;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;line-height:1.2;text-decoration:none;transition:.2s ease}
 .logo-pill:hover{border-color:var(--cta);color:#fff;box-shadow:0 6px 20px -10px rgba(43,89,255,.5)}
+
+/* Trust logos: horizontal swipe, no borders, full color */
+.trust .logos-horizontal{
+  display:flex;
+  align-items:center;
+  gap:32px;
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+  scroll-snap-type:x proximity;
+  justify-content:center; /* keep centered when not overflowing */
+  scroll-behavior:smooth; /* smooth programmatic scrolling */
+  padding:8px 4px;
+}
+.trust .logo-pill{
+  background:transparent;
+  border:0;
+  padding:0;
+  min-height:var(--trust-logo-h);
+  border-radius:0;
+  box-shadow:none;
+  scroll-snap-align:center;
+  width:var(--trust-logo-w);
+  height:var(--trust-logo-h);
+  flex:0 0 var(--trust-logo-w);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.trust .logo-pill:hover{box-shadow:none;border-color:transparent}
+.trust .logo-pill img{
+  display:block;
+  max-height:100%;
+  max-width:100%;
+  width:auto;
+  height:auto;
+  opacity:1;
+}
+.trust .logo-pill img.to-white{filter:invert(1)}
+.trust .logo-pill:hover img{opacity:1}
 
 /* Tech badges */
 .tech-badges{display:flex;align-items:center;gap:12px;margin-top:12px;opacity:.95;flex-wrap:wrap}
@@ -140,13 +186,28 @@ body.nav-open .mobile-menu{display:block}
   .section-sm{padding:32px 0}
   .header{border-bottom:1px solid rgba(42,50,66,.6)}
   .brand{gap:8px}
-  .brand-logo{height:26px}
+  .brand-logo{height:clamp(30px, 5vw, 40px)}
   .hero-card{margin-top:28px}
   .hero-card iframe{height:520px!important}
   .hero h1{font-size:34px}
   .hero p{font-size:16px}
   .tech-badges{gap:10px;margin-top:10px}
   .trust .container{gap:12px}
+  /* Generic horizontal scroll helper for small screens */
+  .grid.scroll-x{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:8px;
+  }
+  .grid.scroll-x{scrollbar-width:thin}
+  .grid.scroll-x::-webkit-scrollbar{height:8px}
+  .grid.scroll-x > *{
+    flex:0 0 auto;
+    scroll-snap-align:center;
+    min-width:260px;
+  }
   .grid.grid-auto-pill{
     display:flex;
     overflow-x:auto;
@@ -182,6 +243,10 @@ body.nav-open .mobile-menu{display:block}
 /* ---------- Process ---------- */
 .band{background:#0F141C;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .step .kicker{color:#7C8599;font-size:13px}
+
+/* ---------- Calendar Embed ---------- */
+.calendar-embed{background:var(--paper);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.calendar-embed iframe{display:block;width:100%;height:600px;background:var(--paper);border:0}
 
 /* ---------- CTA Band ---------- */
 .cta-band .card{padding:24px}

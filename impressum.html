@@ -7,64 +7,10 @@
   <meta name="description" content="Werkbold realisiert B2B-Shops, Automation und Content für anspruchsvolle B2B-Teams.">
   <meta name="theme-color" content="#0E1116">
   <link rel="stylesheet" href="styles.css">
+  <script src="assets/snippets.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="container nav">
-      <a class="brand" href="index.html" aria-label="Zur Startseite">
-        <img class="brand-logo" src="assets/WERKBOLD-Logo.png" alt="WERKBOLD" loading="eager">
-      </a>
-
-      <nav class="nav-links" aria-label="Hauptnavigation">
-        <a href="#leistungen">Leistungen</a>
-        <a href="#cases">Case Studies</a>
-        <a href="#branchen">Branchen</a>
-        <a href="#ressourcen">Ressourcen</a>
-        <a href="#ueber">Über</a>
-      </nav>
-
-      <div class="nav-cta">
-        <a class="btn btn-primary" href="https://calendly.com/daniel-maier-black-beetle/30min" target="_blank" rel="noopener">Strategie-Call buchen</a>
-      </div>
-
-      <!-- Mobile -->
-      <button type="button" class="burger" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
-      <div class="container">
-        <div class="mobile-group">
-          <p class="mobile-group-title">Seiten</p>
-          <nav class="mobile-links" aria-label="Seiten">
-            <a href="index.html">Startseite</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="b2b-shops-automation.html">B2B‑Shops & Automation</a>
-            <a href="social-media-content.html">Social Media Content</a>
-            <a href="brand-und-print.html">Brand & Print</a>
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
-          </nav>
-        </div>
-        <div class="mobile-group">
-          <p class="mobile-group-title">Abschnitte</p>
-          <nav class="mobile-links" aria-label="Abschnitte der Startseite">
-            <a href="index.html#leistungen">Leistungen</a>
-            <a href="index.html#cases">Case Studies</a>
-            <a href="index.html#branchen">Branchen</a>
-            <a href="index.html#ressourcen">Ressourcen</a>
-            <a href="index.html#ueber">Über</a>
-          </nav>
-        </div>
-        <div class="mobile-actions">
-          <a class="btn btn-primary" href="https://calendly.com/daniel-maier-black-beetle/30min" target="_blank" rel="noopener">Strategie-Call buchen</a>
-        </div>
-      </div>
-    </div>
-  </header>
+  <div data-include="header"></div>
 
   <main id="main">
     <!-- Hero -->
@@ -84,13 +30,14 @@
             <li>✅ Integrationen in ERP/CRM</li>
           </ul>
         </div>
-        <!-- Statt Formular direkt Calendly-Widget -->
+        <!-- Statt Formular direkt Termin-Widget -->
         <div class="card hero-card">
           <h3 style="font-size:18px;font-weight:700">Kurz-Audit jetzt buchen</h3>
           <p class="subtitle">15 Minuten, klare Empfehlungen – Termin direkt online auswählen.</p>
           <div style="margin-top:16px;overflow:hidden">
-            <iframe src="https://calendly.com/daniel-maier-black-beetle/30min?hide_event_type_details=1&primary_color=2B59FF"
-                    style="width:100%;height:630px;border:0;" frameborder="0"></iframe>
+            <!-- Google Calendar Appointment Scheduling begin -->
+            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2SMuD4Sv9ZXmoQo5qL1luCRbSm7fOugNlhBxIoqpZ1coFF6Y3-WZ5VM-LQcgQVJhu0HWhTwhNE?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+            <!-- end Google Calendar Appointment Scheduling -->
           </div>
         </div>
       </div>
@@ -101,93 +48,6 @@
 
   </main>
 
-  <footer>
-    <div class="container section grid footer-grid">
-      <div>
-        <a class="brand" href="index.html" aria-label="Zur Startseite">
-          <img class="brand-logo" src="assets/WERKBOLD-Logo.png" alt="WERKBOLD" loading="lazy">
-        </a>
-        <p class="subtitle" style="margin-top:12px">B2B‑Shops & Automation · Social Content · Brand & Print</p>
-      </div>
-      <div>
-        <h4>Leistungen</h4>
-        <div class="subtitle" style="margin-top:8px;display:grid;gap:8px">
-          <a href="b2b-shops-automation.html">B2B‑Shops & Automation</a>
-          <a href="social-media-content.html">Social Media Content</a>
-          <a href="brand-und-print.html">Brand & Print</a>
-        </div>
-      </div>
-      <div>
-        <h4>Unternehmen</h4>
-        <div class="subtitle" style="margin-top:8px;display:grid;gap:8px">
-          <a href="portfolio.html">Portfolio</a>
-          <a href="index.html#ueber">Über Werkbold</a>
-          <a href="index.html#cases">Case Studies</a>
-          <a href="#">Karriere</a>
-        </div>
-      </div>
-      <div>
-        <h4>Rechtliches</h4>
-        <div class="subtitle" style="margin-top:8px;display:grid;gap:8px">
-          <a href="impressum.html">Impressum</a>
-          <a href="datenschutz.html">Datenschutz</a>
-          <a href="#">Cookie‑Einstellungen</a>
-        </div>
-      </div>
-    </div>
-    <div class="container footer-bottom">© <span id="year"></span> Werkbold</div>
-    <script>
-      (function(){
-        const yearEl = document.getElementById('year');
-        if(yearEl){
-          yearEl.textContent = new Date().getFullYear();
-        }
-
-        const mobileMenu = document.getElementById('mobile-menu');
-        const burger = document.querySelector('.burger');
-        if(!mobileMenu || !burger){
-          return;
-        }
-
-        let isOpen = false;
-        const setState = (open) => {
-          isOpen = open;
-          document.body.classList.toggle('nav-open', open);
-          burger.setAttribute('aria-expanded', String(open));
-          mobileMenu.setAttribute('aria-hidden', String(!open));
-        };
-
-        burger.addEventListener('click', () => {
-          setState(!isOpen);
-        });
-
-        document.addEventListener('keydown', (event) => {
-          if(event.key === 'Escape' && isOpen){
-            setState(false);
-          }
-        });
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            setState(false);
-          });
-        });
-
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-        const handleBreakpoint = (event) => {
-          if(event.matches){
-            setState(false);
-          }
-        };
-        if(mediaQuery.addEventListener){
-          mediaQuery.addEventListener('change', handleBreakpoint);
-        } else if(mediaQuery.addListener){
-          mediaQuery.addListener(handleBreakpoint);
-        }
-
-        setState(false);
-      })();
-    </script>
-  </footer>
+  <div data-include="footer"></div>
 </body>
 </html>

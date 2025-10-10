@@ -7,323 +7,46 @@
   <meta name="description" content="Werkbold realisiert B2B‑Shops, Automation und Content für anspruchsvolle B2B‑Teams.">
   <meta name="theme-color" content="#0E1116">
   <link rel="stylesheet" href="styles.css">
+  <script src="assets/snippets.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
-
-  <!-- Header -->
-  <header class="header">
-    <div class="container nav">
-      <div class="brand">
-        <img class="brand-logo" src="assets/WERKBOLD-Logo.png" alt="WERKBOLD">
-
-      
-      </div>
-
-      <nav class="nav-links" aria-label="Hauptnavigation">
-        <a href="#leistungen">Leistungen</a>
-        <a href="#cases">Case Studies</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="#branchen">Branchen</a>
-        <a href="#ressourcen">Ressourcen</a>
-        <a href="#ueber">Über</a>
-      </nav>
-
-      <div class="nav-cta">
-        <a class="btn btn-primary" href="#kalender" data-cal="true" target="_blank" rel="noopener">Strategie‑Call buchen</a>
-      </div>
-
-      <!-- Mobile -->
-      <label class="burger" for="nav-toggle" aria-label="Menü öffnen" aria-controls="mobile-menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </label>
-      <input type="checkbox" id="nav-toggle" aria-hidden="true">
-    </div>
-    <div id="mobile-menu" class="mobile-menu">
-      <div class="container">
-        <a href="#leistungen">Leistungen</a>
-        <a href="#cases">Case Studies</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="#branchen">Branchen</a>
-        <a href="#ressourcen">Ressourcen</a>
-        <a href="#ueber">Über</a>
-        <div class="mobile-actions">
-          <a class="btn btn-primary" href="#kalender" data-cal="true" target="_blank" rel="noopener">Strategie‑Call buchen</a>
-        </div>
-      </div>
-    </div>
-  </header>
+  <div data-include="header"></div>
 
   <main id="main">
     <!-- Hero -->
-    <section class="hero section">
-      <div class="container grid grid-2">
-        <div>
-          <h1>B2B‑Commerce, der verkauft – <span style="color:var(--accent)">und Prozesse verbindet.</span></h1>
-          <p style="margin-top:12px">Werkbold realisiert B2B‑Shops & Automation mit Content, der Ihre Pipeline messbar stärkt.</p>
-          <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
-            <a class="btn btn-primary" href="#kalender" data-cal="true" target="_blank" rel="noopener">Kurz‑Audit buchen</a>
-            <a class="btn btn-ghost" href="#cases">Case Studies ansehen</a>
-          </div>
-          <ul style="margin-top:24px;display:grid;gap:8px;grid-template-columns:1fr">
-            <li>✅ +27% Lead‑to‑Order in 6 Monaten</li>
-            <li>✅ −38% manueller Aufwand</li>
-            <li>✅ Schneller Time‑to‑Value</li>
-            <li>✅ Integrationen in ERP/CRM</li>
-          </ul>
-        </div>
-        
-<div class="card hero-card" id="kalender"><h3 style="font-size:18px;font-weight:700">Kurz‑Audit jetzt buchen</h3><p class="subtitle">15 Minuten, klare Empfehlungen – Termin direkt online auswählen.</p><div style="margin-top:16px;overflow:hidden"><iframe title="Calendly Kurz‑Audit" src="https://calendly.com/daniel-maier-black-beetle/30min?hide_event_type_details=1&primary_color=2B59FF&locale=de" style="width:100%;height:760px;border:0;"></iframe></div></div></div></section>
+    <div data-include="home-hero"></div>
 
     <!-- Trust bar -->
-    <section class="trust section-sm">
-      <div class="container grid" style="grid-template-columns:repeat(6,1fr)">
-        <div class="logo-pill">Johanniter</div>
-        <div class="logo-pill">Dr. Hauck</div>
-        <div class="logo-pill">Bayerisches Staatsministerium für Wirtschaft, Landesentwicklung und Energie</div>
-        <div class="logo-pill">Kibler Teppiche</div>
-        <div class="logo-pill">Relax Appartements</div>
-        <div class="logo-pill">Fight School</div>
-      </div>
-    </section>
+    <div data-include="home-trust"></div>
 
     <!-- Drei Säulen -->
-    <section id="leistungen" class="section">
-      <div class="container">
-        <h2 class="h2">Drei Säulen. Ein Ergebnis: Wachstum.</h2>
-        <p class="subtitle">Fokussiert statt Bauchladen – wir liefern in drei Bereichen, die Umsatz und Effizienz direkt beeinflussen.</p>
-        <div class="grid grid-3" style="margin-top:32px">
-          <article class="card pillar" style="padding:20px">
-            <div class="badge"><span class="dot dot-teal"></span><span>B2B‑Shops & Automation</span></div>
-            <h3 style="margin-top:10px">Systeme, die zusammenarbeiten</h3>
-            <p style="margin-top:8px">Shop, ERP, PIM, CRM und Fulfillment greifen nahtlos ineinander – weniger manuelle Arbeit, mehr Durchsatz.</p>
-            <a class="btn btn-ghost" style="margin-top:16px" href="b2b-shops-automation.html">Mehr erfahren</a>
-          </article>
-          <article class="card pillar" style="padding:20px">
-            <div class="badge"><span class="dot dot-violet"></span><span>Social Media Content</span></div>
-            <h3 style="margin-top:10px">Strategie bis Publishing</h3>
-            <p style="margin-top:8px">Strategie, Produktion und Publishing aus einem Guss – mit KPIs, die auf Pipeline einzahlen.</p>
-            <a class="btn btn-ghost" style="margin-top:16px" href="social-media-content.html">Mehr erfahren</a>
-          </article>
-          <article class="card pillar" style="padding:20px">
-            <div class="badge"><span class="dot dot-brass"></span><span>Brand & Print</span></div>
-            <h3 style="margin-top:10px">Marken, die tragen</h3>
-            <p style="margin-top:8px">Markensysteme, die Wiedererkennung schaffen – von Logo bis Messe, konsistent über alle Touchpoints.</p>
-            <a class="btn btn-ghost" style="margin-top:16px" href="brand-und-print.html">Mehr erfahren</a>
-          </article>
-        </div>
-      </div>
-    </section>
+    <div data-include="home-pillars"></div>
 
     <!-- KPI Bar -->
-    <section class="section">
-      <div class="container kpi grid grid-4" style="grid-template-columns:repeat(4,1fr)">
-        <div class="card">
-          <div class="value">−38%</div>
-          <div class="label">Ø Aufwand reduziert</div>
-        </div>
-        <div class="card">
-          <div class="value">+27%</div>
-          <div class="label">Lead‑to‑Order</div>
-        </div>
-        <div class="card">
-          <div class="value">4 Wochen</div>
-          <div class="label">Deploy‑Zeit</div>
-        </div>
-        <div class="card">
-          <div class="value">20+</div>
-          <div class="label">Integrationen</div>
-        </div>
-      </div>
-    </section>
+    <div data-include="home-kpi"></div>
 
     <!-- Case Highlight -->
-    <section id="cases" class="section">
-      <div class="container grid grid-2">
-        <div class="card" style="padding:20px">
-          <h3 style="font-size:18px">Case Highlight</h3>
-          <p class="subtitle">Replatforming & Automation bei einem Großhändler: mehr Conversion, weniger Aufwand.</p>
-          <h4 style="margin-top:16px">Ausgangslage</h4>
-          <p class="subtitle">Manuelle Rechnungen, Datensilos, Content‑Lücken.</p>
-          <h4 style="margin-top:16px">Lösung</h4>
-          <p class="subtitle">Shop‑CRM‑Handshake, automatisierte Fulfillment‑Flows, Content‑Taktung.</p>
-          <h4 style="margin-top:16px">Ergebnis</h4>
-          <ul class="subtitle" style="margin-top:8px">
-            <li>+19% Conversion im Checkout</li>
-            <li>−42% manueller Aufwand in Ops</li>
-            <li>+2.3x Output in Social bei gleicher Mannschaft</li>
-          </ul>
-          <a class="btn btn-primary" style="margin-top:16px" href="portfolio.html">Weitere Case Studies</a>
-        </div>
-        <div class="card center" style="min-height:220px">
-          <div class="container center" style="height:100%">
-            <div style="width:100%;height:180px;border-radius:12px;border:1px solid var(--border);background:#121926;color:#7C8599;display:flex;align-items:center;justify-content:center">
-              Medien/Galerie‑Platzhalter
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div data-include="home-case"></div>
 
     <!-- Prozess -->
-    <section class="band section">
-      <div class="container grid grid-4" style="grid-template-columns:repeat(4,1fr)">
-        <div class="card step" style="padding:20px">
-          <div class="kicker">Schritt 1</div>
-          <h3>Audit</h3>
-          <p class="subtitle">Status‑quo, Ziele, Stack‑Check</p>
-        </div>
-        <div class="card step" style="padding:20px">
-          <div class="kicker">Schritt 2</div>
-          <h3>Roadmap</h3>
-          <p class="subtitle">Prioritäten, KPIs, Meilensteine</p>
-        </div>
-        <div class="card step" style="padding:20px">
-          <div class="kicker">Schritt 3</div>
-          <h3>Umsetzung</h3>
-          <p class="subtitle">Module, Integrationen, Content</p>
-        </div>
-        <div class="card step" style="padding:20px">
-          <div class="kicker">Schritt 4</div>
-          <h3>Run & Improve</h3>
-          <p class="subtitle">Monitoring, Sprints, Uplifts</p>
-        </div>
-      </div>
-    </section>
+    <div data-include="home-process"></div>
 
     <!-- CTA Band / Kontakt -->
-    <section id="kontakt" class="section">
-      <div class="container">
-        <div class="card" style="padding:24px;display:flex;gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-          <div>
-            <div class="badge" style="color:var(--text-muted)">Nächster Schritt</div>
-            <h2 style="margin-top:8px">Kostenloses Kurz‑Audit sichern</h2>
-            <p class="subtitle">15 Minuten. Klare Empfehlungen. Kein Pitch‑Theater.</p>
-          </div>
-          <a class="btn btn-primary" href="#kalender" data-cal="true" target="_blank" rel="noopener">Strategie‑Call buchen</a>
-        </div>
-
-        
-      </div>
-    </section>
+    <div data-include="home-cta"></div>
 
     <!-- Branchen -->
-    <section id="branchen" class="section">
-      <div class="container">
-        <div class="badge"><span class="dot dot-brass"></span>Unsere Fokusbereiche</div>
-        <h2 style="margin-top:8px">Branchen</h2>
-        <p class="subtitle">Wir arbeiten mit B2B‑Teams aus Industrie, Handel und Tech. Hohe Komplexität, viele Stakeholder und messbare Ergebnisse sind unser Alltag.</p>
-        <div class="grid grid-3" style="margin-top:20px">
-          <div class="card" style="padding:20px">
-            <h3>Industrie & Fertigung</h3>
-            <p class="subtitle">B2B‑Commerce mit Varianten, Preisen & ERP‑Anbindung.</p>
-          </div>
-          <div class="card" style="padding:20px">
-            <h3>Großhandel & Distribution</h3>
-            <p class="subtitle">Automatisierte Bestellprozesse, Self‑Service & CRM‑Sync.</p>
-          </div>
-          <div class="card" style="padding:20px">
-            <h3>SaaS & Tech</h3>
-            <p class="subtitle">Produkt‑Website, Docs, Integrationen & Content‑Engine.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div data-include="home-branches"></div>
 
     <!-- Ressourcen -->
-    <section id="ressourcen" class="section">
-      <div class="container grid grid-3">
-        <div class="card" style="padding:20px">
-          <div class="badge">Guide</div>
-          <h3 style="margin-top:8px">Replatforming‑Checkliste</h3>
-          <p class="subtitle">20 Punkte, um Shop, PIM, ERP & CRM sauber zu migrieren.</p>
-          <a class="btn btn-ghost" style="margin-top:12px" href="#">Herunterladen</a>
-        </div>
-        <div class="card" style="padding:20px">
-          <div class="badge">How‑To</div>
-          <h3 style="margin-top:8px">Automation Playbook</h3>
-          <p class="subtitle">Von Lead bis Fulfillment: Flows, die manuelle Arbeit sparen.</p>
-          <a class="btn btn-ghost" style="margin-top:12px" href="#">Ansehen</a>
-        </div>
-        <div class="card" style="padding:20px">
-          <div class="badge">Vorlage</div>
-          <h3 style="margin-top:8px">Content‑Plan B2B</h3>
-          <p class="subtitle">Template für 6 Wochen Social‑Output mit Team‑Rollen.</p>
-          <a class="btn btn-ghost" style="margin-top:12px" href="#">Kopieren</a>
-        </div>
-      </div>
-    </section>
+    <div data-include="home-resources"></div>
 
     <!-- Über -->
-    <section id="ueber" class="section">
-      <div class="container grid grid-2">
-        <div>
-          <div class="badge">Über uns</div>
-          <h2 style="margin-top:8px">Werkbold in Kürze</h2>
-          <p class="subtitle">Wir verbinden E‑Commerce, Automatisierung und Content zu pragmatischen Lösungen für B2B. Schlanke Teams, klare Roadmaps, schnelle Iteration – mit Fokus auf Ergebnis statt Theater.</p>
-          <div class="grid grid-3" style="margin-top:20px">
-            <div class="card" style="padding:16px;text-align:center">
-              <div class="value" style="font-weight:900;font-size:22px">10+ Jahre</div>
-              <div class="label" style="font-size:12px;color:var(--text-muted)">B2B‑Erfahrung</div>
-            </div>
-            <div class="card" style="padding:16px;text-align:center">
-              <div class="value" style="font-weight:900;font-size:22px">20+</div>
-              <div class="label" style="font-size:12px;color:var(--text-muted)">Integrationen</div>
-            </div>
-            <div class="card" style="padding:16px;text-align:center">
-              <div class="value" style="font-weight:900;font-size:22px">4 Wochen</div>
-              <div class="label" style="font-size:12px;color:var(--text-muted)">typ. Deploy</div>
-            </div>
-          </div>
-        </div>
-        <div class="card center" style="min-height:260px">
-          <div class="container center" style="height:100%">
-            <div style="width:100%;height:220px;border-radius:12px;border:1px solid var(--border);background:#121926;color:#7C8599;display:flex;align-items:center;justify-content:center">
-              Team/Foto‑Platzhalter
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div data-include="home-about"></div>
+
+    <!-- Booking Calendar (CTA unten) -->
+    <div data-include="home-booking"></div>
   </main>
 
-  <footer>
-    <div class="container section grid" style="grid-template-columns:1.2fr 1fr 1fr 1fr">
-      <div>
-        <div class="brand">
-          <div class="brand-mark" aria-hidden="true"></div>
-          <span>WERKBOLD</span>
-        </div>
-        <p class="subtitle" style="margin-top:12px">B2B‑Shops & Automation · Social Content · Brand & Print</p>
-      </div>
-      <div>
-        <h4>Leistungen</h4>
-        <div class="subtitle" style="margin-top:8px;display:grid;gap:8px">
-          <a href="b2b-shops-automation.html">B2B‑Shops & Automation</a>
-          <a href="social-media-content.html">Social Media Content</a>
-          <a href="brand-und-print.html">Brand & Print</a>
-        </div>
-      </div>
-      <div>
-        <h4>Unternehmen</h4>
-        <div class="subtitle" style="margin-top:8px;display:grid;gap:8px">
-          <a href="portfolio.html">Portfolio</a>
-          <a href="#ueber">Über Werkbold</a>
-          <a href="#cases">Case Studies</a>
-          <a href="#">Karriere</a>
-        </div>
-      </div>
-      <div>
-        <h4>Rechtliches</h4>
-        <div class="subtitle" style="margin-top:8px;display:grid;gap:8px">
-          <a href="impressum.html">Impressum</a>
-          <a href="datenschutz.html">Datenschutz</a>
-          <a href="#">Cookie‑Einstellungen</a>
-        </div>
-      </div>
-    </div>
-    <div class="container footer-bottom">© <span id="year"></span> Werkbold</div>
-    <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
-  </footer>
+  <div data-include="footer"></div>
 </body>
 </html>
